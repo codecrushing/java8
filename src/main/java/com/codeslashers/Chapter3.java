@@ -28,12 +28,12 @@ class Chapter3 {
 		
 		Validator<String> zipCodeValidator = new Validator<String>() {
 			public boolean validates(String value) {
-				return value.matches("[0-9]{5}-[0-9]{3}");
+				return value.matches("[0-9]{5}-?([0-9]{4})?");
 			}	
 		};
 		
 		Validator<String> zipCodeValidatorAsLambda = 
-				valor -> valor.matches("[0-9]{5}-[0-9]{3}");
+				valor -> valor.matches("[0-9]{5}-?([0-9]{4})?");
 		
 		Runnable o = () -> {
 			System.out.println("Which lambda am I?");
