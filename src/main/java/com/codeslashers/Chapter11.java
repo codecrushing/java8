@@ -92,7 +92,7 @@ class Payment {
 
 	public String toString() {
 		return "[Payment: " + 
-			date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) +
+			date.format(DateTimeFormatter.ofPattern("MM-dd-yyyy")) +
 			" " + customer + " " + products + "]";
 	}
 }
