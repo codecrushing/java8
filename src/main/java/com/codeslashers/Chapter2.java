@@ -26,7 +26,7 @@ public class Chapter2 {
 		
 		users.forEach(u -> System.out.println(u.getName()));
 		
-		users.forEach(u -> u.becameModerator());
+		users.forEach(u -> u.becomeModerator());
 		
 	}
 }

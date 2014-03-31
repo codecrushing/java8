@@ -8,7 +8,7 @@ class User {
 	
 	private int reputationScore;
 	private String name;
-	private boolean becameModerator;
+	private boolean becomeModerator;
 	
 	public User(String name) {
 		this.name = name;
@@ -17,13 +17,13 @@ class User {
 	public User(String name, int reputationScore) {
 		this.reputationScore = reputationScore;
 		this.name = name;
-		this.becameModerator = false;
+		this.becomeModerator = false;
 	}
 
-	public User(String name, int reputationScore, boolean becameModerator) {
+	public User(String name, int reputationScore, boolean becomeModerator) {
 		this.reputationScore = reputationScore;
 		this.name = name;
-		this.becameModerator = becameModerator;
+		this.becomeModerator = becomeModerator;
 	}
 
 	public int getReputationScore() {
@@ -34,8 +34,8 @@ class User {
 		return name;
 	}
 
-	public void becameModerator() {
-		this.becameModerator = true;
+	public void becomeModerator() {
+		this.becomeModerator = true;
 	}
 	
 	public String toString() {
@@ -43,7 +43,7 @@ class User {
 	}
 
 	public boolean isModerator() {
-		return becameModerator;
+		return becomeModerator;
 	}
 }
 

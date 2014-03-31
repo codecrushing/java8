@@ -24,7 +24,7 @@ class Chapter7 {
 		List<User> users = Arrays.asList(user1, user2, user3);
 
 		users.sort(Comparator.comparing(User::getReputationScore).reversed());
-		users.subList(0,1).forEach(User::becameModerator);
+		users.subList(0,1).forEach(User::becomeModerator);
 
 		Collections.sort(users, new Comparator<User>() {
 			@Override
@@ -36,7 +36,7 @@ class Chapter7 {
 		Collections.reverse(users);
 		List<User> top10 = users.subList(0, 1);
 		for(User user : top10) {
-			user.becameModerator();
+			user.becomeModerator();
 		}
 
 		Stream<User> stream = users.stream()

@@ -22,11 +22,11 @@ class Chapter6 {
 
 		List<User> users = Arrays.asList(user1, user2, user3);
 
-		users.forEach(u -> u.becameModerator());
+		users.forEach(u -> u.becomeModerator());
 
-		users.forEach(User::becameModerator);
+		users.forEach(User::becomeModerator);
 
-		Consumer<User> becamesModerator = User::becameModerator;
+		Consumer<User> becamesModerator = User::becomeModerator;
 		users.forEach(becamesModerator);
 
 		users.sort(Comparator.comparing(u -> u.getName()));
@@ -79,13 +79,13 @@ class Chapter6 {
 		User rodrigo2 = userCreator2.apply("Rodrigo Turini", 50);
 		User paulo2 = userCreator2.apply("Paulo Silveira", 300);
 		
-		Runnable block = rodrigo::becameModerator;
+		Runnable block = rodrigo::becomeModerator;
 
-		Runnable block1 = rodrigo::becameModerator;
-		Runnable block2 = () -> rodrigo.becameModerator();
+		Runnable block1 = rodrigo::becomeModerator;
+		Runnable block2 = () -> rodrigo.becomeModerator();
 
-		Consumer<User> consumer1 = User::becameModerator;
-		Consumer<User> consumer2 = (u) -> u.becameModerator();
+		Consumer<User> consumer1 = User::becomeModerator;
+		Consumer<User> consumer2 = (u) -> u.becomeModerator();
 
 		BiFunction<Integer, Integer, Integer> max = Math::max;
 		ToIntBiFunction<Integer, Integer> max2 = Math::max;
