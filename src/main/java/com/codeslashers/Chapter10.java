@@ -46,7 +46,7 @@ public class Chapter10 {
 
 		// adding timezone information to get a ZonedDateTime.
 		ZonedDateTime dateTimeAndTimezone = 
-			dateAndTime.atZone(ZoneId.of("America/Sao_Paulo"));
+			dateAndTime.atZone(ZoneId.of("America/Los_Angeles"));
 
 		// from ZonedDateTime to LocalDateTime
 		
@@ -96,11 +96,11 @@ public class Chapter10 {
 
 		now.format(DateTimeFormatter.ISO_LOCAL_TIME);
 
-		now.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		now.format(DateTimeFormatter.ofPattern("MM-dd-yyyy"));
 
 		// parsing from String to LocalDate
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
 		String result = now.format(formatter);
 		LocalDate now3 = LocalDate.parse(result, formatter);
 
@@ -108,7 +108,7 @@ public class Chapter10 {
 		
 		Calendar instante = Calendar.getInstance();
 		instante.set(2014, Calendar.FEBRUARY, 30);		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM-dd-yyyy");
 		System.out.println(dateFormat.format(instante.getTime()));
 
 		// invalid date and time
