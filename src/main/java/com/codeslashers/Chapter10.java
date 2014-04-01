@@ -86,13 +86,13 @@ public class Chapter10 {
 
 		// formating and displying date models
 		
-		Locale pt = new Locale("pt");
+		Locale us = Locale.US;	
 
 		System.out.println(Month.DECEMBER
-			.getDisplayName(TextStyle.FULL, pt));
+			.getDisplayName(TextStyle.FULL, us));
 
 		System.out.println(Month.DECEMBER
-			.getDisplayName(TextStyle.SHORT, pt));
+			.getDisplayName(TextStyle.SHORT, us));
 
 		now.format(DateTimeFormatter.ISO_LOCAL_TIME);
 
@@ -140,13 +140,13 @@ public class Chapter10 {
 		
 		long months = ChronoUnit.MONTHS.between(anotherDate, now4);
 		long years = ChronoUnit.YEARS.between(anotherDate, now4);
-		System.out.printf("%s days, %s months e %s years", days2, months, years);
+		System.out.printf("%s days, %s months and %s years", days2, months, years);
 
 		// Period between local dates
 		
 		LocalDate anotherDate2 = LocalDate.of(1989, Month.JANUARY, 25);
 		Period period = Period.between(anotherDate2, now4);
-		System.out.printf("%s days, %s months e %s years", 
+		System.out.printf("%s days, %s months and %s years", 
 			period.getDays(), period.getMonths(), period.getYears());
 
 		// negating period values 
@@ -157,7 +157,7 @@ public class Chapter10 {
 			period2 = period2.negated();
 		}
 
-		System.out.printf("%s days, %s months e %s years", 
+		System.out.printf("%s days, %s months and %s years", 
 			period2.getDays(), period2.getMonths(), period2.getYears());
 
 		// the same, but using Duration
@@ -170,7 +170,7 @@ public class Chapter10 {
 			duration = duration.negated();
 		}
 
-		System.out.printf("%s days, %s minutes e %s seconds", 
+		System.out.printf("%s days, %s minutes and %s seconds", 
 			duration.toHours(), duration.toMinutes(), duration.getSeconds());
 	}
 }
