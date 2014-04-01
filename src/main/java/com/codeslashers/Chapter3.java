@@ -33,7 +33,7 @@ class Chapter3 {
 		};
 		
 		Validator<String> zipCodeValidatorAsLambda = 
-				valor -> valor.matches("[0-9]{5}-?([0-9]{4})?");
+				value -> value.matches("[0-9]{5}-?([0-9]{4})?");
 		
 		Runnable o = () -> {
 			System.out.println("Which lambda am I?");
