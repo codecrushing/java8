@@ -16,6 +16,8 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import java.util.*;
+import java.time.*;
 
 class Product {
 	
@@ -151,41 +153,43 @@ public class Chapter11 {
 
 		Customer paulo = new Customer("Paulo Silveira");
 		Customer rodrigo = new Customer("Rodrigo Turini");
-		Customer guilherme = new Customer("Guilherme Silveira");
-		Customer adriano = new Customer("Adriano Almeida");
-		
-		Product bach = new Product("Bach Completo", 
+		Customer james = new Customer("James Gosling");
+		Customer brian = new Customer("Brian Goetz");
+
+		Product bach = new Product("Complete Bach", 
 				Paths.get("/music/bach.mp3"), new BigDecimal(100));
-		
-		Product roar = new Product("Roar",
-			 Paths.get("/music/roar.mp3"), new BigDecimal(90));
-		
-		Product flag = new Product("Brazil Flag",
-				Paths.get("/images/brazil.jpg"), new BigDecimal(50));
-		
+
+		Product baby = new Product("Baby - Justin Bieber",
+			 Paths.get("/music/baby.mp3"), new BigDecimal(90));
+
+		Product brothers = new Product("Brothers Karamazov",
+				Paths.get("/images/brothers.pdf"), new BigDecimal(50));
+
 		Product beauty = new Product("American Beauty", 
 				Paths.get("beauty.mov"), new BigDecimal(150));
-		
+
 		Product avengers = new Product("The Avengers", 
 				Paths.get("/movies/avengers.mov"), new BigDecimal(200));
-		
+
 		Product amelie = new Product("Amelie Poulain", 
 				Paths.get("/movies/amelie.mov"), new BigDecimal(100));
-		
+
+	
 		LocalDateTime today = LocalDateTime.now();
 		LocalDateTime yesterday = today.minusDays(1);
 		LocalDateTime lastMonth = today.minusMonths(1);
 		
 		Payment payment1 = 
-			new Payment(asList(bach, roar), today, paulo);
+			new Payment(asList(bach, baby), today, paulo);
 		Payment payment2 = 
-			new Payment(asList(bach, flag, amelie), yesterday, rodrigo);
+			new Payment(asList(bach, brothers, amelie), yesterday, rodrigo);
 		Payment payment3 = 
-			new Payment(asList(beauty, avengers, bach), today, adriano);
+			new Payment(asList(beauty, avengers, bach), today, james);
 		Payment payment4 = 
-			new Payment(asList(bach, roar, amelie), lastMonth, guilherme);
+			new Payment(asList(bach, baby, amelie), lastMonth, brian);
 		Payment payment5 = 
 			new Payment(asList(beauty, amelie), yesterday, paulo);
+
 
 		List<Payment> payments = asList(payment1, payment2, 
 			payment3, payment4, payment5);
@@ -384,7 +388,7 @@ public class Chapter11 {
 				yesterday.minusMonths(8), today.minusMonths(1), rodrigo);
 		
 		Subscription s3 = new Subscription(monthlyFee, 
-				yesterday.minusMonths(5), today.minusMonths(2), adriano);
+				yesterday.minusMonths(5), today.minusMonths(2), brian);
 		
 		List<Subscription> subscriptions = Arrays.asList(s1, s2, s3);
 		
